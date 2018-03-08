@@ -1,6 +1,9 @@
 class Party < ApplicationRecord
   # Direct associations
 
+  has_many   :reservations,
+             :dependent => :destroy
+
   has_many   :events,
              :class_name => "PlannedEvent",
              :dependent => :destroy
