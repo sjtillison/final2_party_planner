@@ -5,6 +5,8 @@ class Restaurant < ApplicationRecord
 
   # Validations
 
+  validates :city_id, :presence => true
+
   validates :cost_pp, :numericality => true
 
   validates :name, :uniqueness => { :scope => [:website, :city_id] }
