@@ -5,4 +5,6 @@ class MealTime < ApplicationRecord
 
   # Validations
 
+  validates :meal, :presence => true
+
 end
