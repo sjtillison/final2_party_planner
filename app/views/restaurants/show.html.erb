@@ -12,13 +12,25 @@
       <dd><%= @restaurant.website %></dd>
 
       <dt>Meal</dt>
-      <dd><%= @restaurant.meal_id %></dd>
+      <dd>
+        <% if @restaurant.meal.present? %>
+          <a href="/meal_times/<%= @restaurant.meal_id %>">
+            <%= @restaurant.meal.meal %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Cost pp</dt>
       <dd><%= @restaurant.cost_pp %></dd>
 
       <dt>City</dt>
-      <dd><%= @restaurant.city_id %></dd>
+      <dd>
+        <% if @restaurant.city.present? %>
+          <a href="/cities/<%= @restaurant.city_id %>">
+            <%= @restaurant.city.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
