@@ -16,7 +16,7 @@
 
       <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.restaurant_id %></td>
+        <td><%= reservation.restaurant.name %></td>
         <td><%= reservation.party_id %></td>
         <td>
           <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">Show</a>
