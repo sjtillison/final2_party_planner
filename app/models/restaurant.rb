@@ -1,6 +1,9 @@
 class Restaurant < ApplicationRecord
   # Direct associations
 
+  has_many   :reservations,
+             :dependent => :destroy
+
   belongs_to :meal,
              :class_name => "MealTime"
 
