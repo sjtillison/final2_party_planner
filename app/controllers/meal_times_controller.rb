@@ -6,6 +6,7 @@ class MealTimesController < ApplicationController
   end
 
   def show
+    @restaurant = Restaurant.new
     @meal_time = MealTime.find(params[:id])
 
     render("meal_times/show.html.erb")
