@@ -42,7 +42,7 @@
           Meal
         </label>
 
-        <input type="text" id="meal_id" name="meal_id" placeholder="Meal" class="form-control" value="<%= @restaurant.meal_id %>">
+        <%= select_tag(:meal_id, options_from_collection_for_select(MealTime.all, :id, :meal, @restaurant.meal_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for cost_pp -->
