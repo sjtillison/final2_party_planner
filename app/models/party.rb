@@ -1,6 +1,9 @@
 class Party < ApplicationRecord
   # Direct associations
 
+  has_many   :attendees,
+             :dependent => :destroy
+
   has_many   :reservations,
              :dependent => :destroy
 
