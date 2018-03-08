@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
   def index
-    @parties = Party.page(params[:page]).per(10)
+    @q = Party.ransack(params[:q])
+    @parties = @q.result(:distinct => true).includes(:events, :reservations, :attendees, :city, :type, :lodging).page(params[:page]).per(10)
 
     render("parties/index.html.erb")
   end
