@@ -1,6 +1,9 @@
 class Restaurant < ApplicationRecord
   # Direct associations
 
+  belongs_to :meal,
+             :class_name => "MealTime"
+
   belongs_to :city
 
   # Indirect associations
