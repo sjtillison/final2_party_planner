@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
   def index
     @q = City.ransack(params[:q])
-    @cities = @q.result(:distinct => true).includes(:activities, :restaurants, :parties, :lodgings).page(params[:page]).per(10)
+    @cities = @q.result(:distinct => true).includes(:activities, :parties, :lodgings).page(params[:page]).per(10)
 
     render("cities/index.html.erb")
   end
@@ -9,7 +9,6 @@ class CitiesController < ApplicationController
   def show
     @lodging = Lodging.new
     @party = Party.new
-    @restaurant = Restaurant.new
     @activity = Activity.new
     @city = City.find(params[:id])
 

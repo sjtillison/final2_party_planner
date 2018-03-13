@@ -111,60 +111,6 @@
   </div>
 </div>
 
-<!-- A Party has many reservations -->
-
-<div class="row">
-  <div class="col-md-12">
-    <ul class="list-group">
-      <li class="list-group-item list-group-item-info">
-        Reservations
-      </li>
-
-      <% @party.reservations.each do |reservation| %>
-        <li class="list-group-item">
-          <a href="/reservations/<%= reservation.id %>">
-            <%= reservation.restaurant_id %>
-          </a>
-          <div class="btn-group btn-group-xs pull-right">
-            <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">
-              <i class="fa fa-search-plus"></i>
-            </a>
-            <a href="/reservations/<%= reservation.id %>/edit" class="btn btn-warning">
-              <i class="fa fa-edit"></i>
-            </a>
-            <a href="/delete_reservation/<%= reservation.id %>" class="btn btn-danger" rel="nofollow">
-              <i class="fa fa-trash-o"></i>
-            </a>
-          </div>
-        </li>
-      <% end %>
-
-      <li class="list-group-item">
-        <form action="/create_reservation" method="post">
-      <!-- Hidden input for authenticity token to protect from forgery -->
-      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-
-      <!-- Label and input for restaurant_id -->
-      <div class="form-group">
-        <label for="restaurant_id" class="control-label">
-          Restaurant
-        </label>
-
-        <%= select_tag(:restaurant_id, options_from_collection_for_select(Restaurant.all, :id, :name), :class => "form-control") %>
-      </div>
-
-      <!-- Label and input for party_id -->
-      <input type="hidden" name="party_id" value="<%= @party.id %>">
-
-      <button class="btn btn-block btn-success">
-        Create Reservation
-      </button>
-    </form>
-      </li>
-    </ul>
-  </div>
-</div>
-
 <!-- A Party has many attendees -->
 
 <div class="row">
