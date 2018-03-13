@@ -10,9 +10,6 @@ class Party < ApplicationRecord
   has_many   :attendees,
              :dependent => :destroy
 
-  has_many   :reservations,
-             :dependent => :destroy
-
   has_many   :events,
              :class_name => "PlannedEvent",
              :dependent => :destroy

@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/firstdraft/draft_generators.git
-  revision: e01917b1608133c48ed81be447b32446eb2eda51
+  revision: 753ab9be43b41efef00c64d00afbc36738ce0c05
   specs:
     draft_generators (0.0.3)
       devise
@@ -259,7 +259,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2018.3)
       tzinfo (>= 1.0.0)
-    uglifier (4.1.6)
+    uglifier (4.1.7)
       execjs (>= 0.3.0, < 3)
     uri-ssh_git (2.0.0)
     warden (1.2.7)

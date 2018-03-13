@@ -7,9 +7,6 @@ class City < ApplicationRecord
   has_many   :parties,
              :dependent => :destroy
 
-  has_many   :restaurants,
-             :dependent => :destroy
-
   has_many   :activities,
              :dependent => :destroy
 
